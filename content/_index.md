@@ -156,6 +156,205 @@ A limitation of all forms of modulation is their unique character. Because modul
 
 ## Ring Modulation 
 
+{{% math %}}
+\text{RingMod}(t) = C(t) \times M(t)
+{{% /math %}}
+
+{{% note %}}
+- We'll start with RM because it's simpler. 
+- Ring Modulation (RM) is a classic and typical sound of early electronic music. While we'll first experiment with multiplying two simple waveforms, sine tones, RM can be very effective when using a sampled sound as the carrier signal, as it can impose subtle frequency changes.
+- By slightly changing RM parameters, one could create many variations of percussion sounds, making the sampled sound more realistic.
+- In a digital system, the formula for RM is  RingModt = Ct * Mt where t (time)
+- If the frequency of the modulator is below 20 Hz, the effect of the RM is a tremolo or a periodic amplitude change. When the frequency of the modulator is above 20 Hz, the impact on the carrier is more of a timbral change.
+
+{{% /note %}}
+
+---
+
+## Sum and Difference Tones
+<div style="display: flex; gap: 20px; align-items: center;">
+
+<div style="flex: 1;">
+    {{% math %}}
+    \text{SumTone}(t) = C(t) + M(t)
+    {{% /math %}}
+
+    {{% math %}}
+    \text{DiffTone}(t) = C(t) - M(t)
+    {{% /math %}}
+</div>
+
+<div style="flex: 1;">
+    <img src="sum+diff-rm.png" alt="Sum and Difference Tones" style="width: 100%;">
+</div>
+
+</div>
+
+{{% note %}}
+- The sum and difference tones are the result of adding or subtracting the carrier and modulator signals.
+- The sum tone is the result of adding the carrier and modulator signals, while the difference tone is the result of subtracting the modulator from the carrier.
+{{% /note %}}
+
+---
+
+### RM wavforms over a 1s timeframe. 
+
+![RM Waveform](rm-waveform.png)
+
+<span class="attribution">Photo courtesy of (Roads 2023)</span>
+
+---
+
+## Max Demo: Ring Modulation
+
+{{% mermaid %}}
+graph TD
+    A[Carrier: cycle~ 440] --> B[*~]
+    B --> C[dac~]
+    D[Modulator: cycle~ 100] --> B
+{{% /mermaid %}}
+
+
+{{% note %}}
+- We'll get a tremolo effect if we set the modulating frequency below 20 Hz. We hear the modulation as the volume changes over time because it's within the just-noticeable difference threshold where our brains can distinguish two events.
+	- **Critical Band** - The bands because they're within the critical band range of frequencies that determine how the ear perceives sound.
+- The slow rate of the modulator also causes the sum and difference tones to fuse.
+- We also hear the tremolo rate as twice the modulator rate because the modulator is zero twice per cycle.
+- If we increase the modulator rate by multiples of two, we can hear the relationship moving up in half notes, quarter notes, eighth notes, sixteenth notes, etc.
+- Moving the modulator rate to the 16th note range borders on the audio rate, above the just-noticeable difference. At this rate, we start to get actual ring modulation.
+{{% /note %}}
+
+---
+
+### View with Scope~ and Spectroscope~
+
+![alt text](scope_and_spectroscope.png)
+
+
+---
+
+## Harmonic and Inharmonic Sidebands
+
+![alt text](harmonic-sidebands.png)
+
+{{% note %}}
+- Carrier Suppression
+	- We won't hear the carrier frequency because the multiplication suppresses it.
+- **Harmonic and Inharmonic**
+	- If the carrier and modulator frequencies are in an integer ratio to each other, the sidebands will be harmonically related; otherwise, the sidebands will be inharmonic14. This distinction affects the perceived consonance or dissonance of the output signal1416.
+	- Show this in max by C * an integer before running it into the modulator so that the relationship is always an integer. Then adjust the carrier slightly to hear the detune.
+		- Remember that you have to adjust the carrier frequency after changing the integer because of left-to-right foolishness.
+{{% /note %}}
+
+---
+
+## Try with a sound file
+
+![alt text](sound-file.png)
+
+---
+
+## Applications of RM
+
+<div style="display: flex; gap: 20px; align-items: center;">
+
+<div style="flex: 1;">
+
+<iframe width="656" height="315" src="https://www.youtube.com/embed/0sAxyu2jOug" title="Karlheinz Stockhausen: Mixtur (1964)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<div style="flex: 1;">
+
+<iframe width="664" height="315" src="https://www.youtube.com/embed/mxD-5z_xHBU" title="Dalek - EXTERMINATE!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+</div>
+
+
+{{% note %}}
+Early RM examples often used a recorded carrier signal and a sine wave modulator. The German Composer Karlheinz Stockhausen used RM in a lot of his works. Here's an example where you can hear it at on the flute.
+{{% /note %}}
+
+---
+
+## Analog RM
+
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/5301073?h=7c6b362e65" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
+
+---
+
+## Amplitude Modulation
+
+{{% math %}}
+\text{AmplitudeMod}(t) = \frac{1}{2} \times (1 + M(t)) \times C(t)
+{{% /math %}}
+
+{{% note %}}
+- AM is a bit more complicated than RM because it involves a unipolar signal.
+- The formula for AM is AmplitudeMod(t) = 1/2 * (1 + M(t)) * C(t)
+- The 1/2 is there to keep the amplitude from going over 1.
+- The 1 + M(t) is there to keep the amplitude from going below 0.
+- The carrier frequency is preserved in the output signal, and the modulator changes the amplitude of the carrier.
+
+- Amplitude modulation is one of the oldest modulation techniques in electronic music.
+- Similarly to RM, the amplitude of the carrier wave is modulated by the modulator wave. The difference between the techniques is that the carrier in AM is unipolar instead of bipolar
+	- **Amplitude Modulation** - involves multiplying a carrier signal with a modulator signal. The modulation range is between 0 and 1. The original carrier signal is preserved.
+	- The modulator is typically a unipolar signal, meaning the entire waveform is above zero. The carrier signal is typically bipolar, meaning it varies between -1 and +1
+{{% /note %}}
+
+---
+
+## Amplitude Envelope
+
+![alt text](amp-env.png)
+
+<span class="attribution">Photo courtesy of (Roads 2023)</span>
+
+
+{{% note %}}
+A straightforward example of AM involves the standard amplitude envelope found on all synthesizers. The envelope is unipolar, and the sine wave is bipolar.
+{{% /note %}}
+
+---
+
+## Comparing Sidebands
+
+<div style="display: flex; gap: 20px; align-items: center;">
+
+<div style="flex: 1;">
+<img src="am-spectrum-1.png" alt="AM Spectrum 1">
+</div>
+
+<div style="flex: 1;">
+<img src="am-spectrum-2.png" alt="AM Spectrum 2">
+</div>
+
+</div>
+
+<span class="attribution">Photo courtesy of (Roads 2023)</span>
+
+{{% note %}}
+Sideband creation works the same, but the AM spectrum contains the carrier frequency as well as the sidebands. Here's a frequency domain figure.
+{{% /note %}}
+
+---
+
+## Max Demo: Amplitude Modulation
+
+![alt text](am-max.png)
+
+---
+
+## Adjust Mod Amount
+
+![alt text](mod-amount.png)
+
+---
+
+## Max Exercise
+
+- Create a patch that lets you switch between RM and AM.
+- Also allow for the selection of different waveforms for the carrier and modulator.
 
 ---
 
