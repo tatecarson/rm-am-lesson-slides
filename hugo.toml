@@ -1,3 +1,20 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Amplitude and Ring Modulation: Exploring Sidebands, Sum/Difference Tones, and DC Offset'
+theme = ["github.com/joshed-io/reveal-hugo"]
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[outputFormats.Reveal]
+baseName = "index"
+mediaType = "text/html"
+isHTML = true
+
+[params.reveal_hugo]
+theme = "solarized"
+
+[[params.reveal_hugo.plugins]]
+name = "RevealAttribution"
+source = "attribution/plugin.js"
+css = "attribution/attribution.css"
