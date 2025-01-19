@@ -79,7 +79,7 @@ If the modulator is in the audio range, we hear sidebands and sum/difference ton
 
 ---
 
-### Modulation in Lous and Bebe Barron's soundtrack to Forbidden Planet (1956)
+### Modulation in Louis and Bebe Barron's soundtrack to *Forbidden Planet* (1956)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0UrG3Fx69Ws?si=3LwpqFb9xhk8Kh8L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -129,7 +129,7 @@ A limitation of all forms of modulation is their unique character. Because modul
   <h3>Ring Modulation</h3>
   <ul>
     <li>Carrier × Modulator</li>
-    <li>Output Range: -1 to 1</li>
+    <li>Modulator Range: -1 to 1</li>
     <li>Carrier frequency is lost.</li>
   </ul>
 </div>
@@ -138,7 +138,7 @@ A limitation of all forms of modulation is their unique character. Because modul
   <h3>Amplitude Modulation</h3>
   <ul>
     <li>Carrier × Modulator</li>
-    <li>Output Range: 0 to 1</li>
+    <li>Modulator Range: 0 to 1</li>
     <li>Carrier frequency is preserved.</li>
   </ul>
 </div>
@@ -195,13 +195,13 @@ A limitation of all forms of modulation is their unique character. Because modul
 - The sum tone is the result of adding the carrier and modulator signals, while the difference tone is the result of subtracting the modulator from the carrier.
 {{% /note %}}
 
----
+<!-- ---
 
 ### RM wavforms over a 1s timeframe. 
 
 ![RM Waveform](rm-waveform.png)
 
-<span class="attribution">Photo courtesy of (Roads 2023)</span>
+<span class="attribution">Photo courtesy of (Roads 2023)</span> -->
 
 ---
 
