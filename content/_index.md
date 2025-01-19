@@ -5,7 +5,7 @@ outputs = ["Reveal"]
 
 # Amplitude and Ring Modulation
 
-**Exploring Sidebands, Sum/Difference Tones, and DC Offset**
+**Sidebands, Sum/Difference Tones, and DC Offset**
 
 ---
 
